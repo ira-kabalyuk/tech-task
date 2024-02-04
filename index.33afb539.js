@@ -1,0 +1,2 @@
+const e=document.querySelector(".navigation_closeButton"),t=document.querySelector(".navigation_openButton"),o=document.querySelector(".navigation"),n=document.querySelector(".layout");t.addEventListener("click",(()=>{o.classList.add("is-opened"),n.classList.add("overlay")})),e.addEventListener("click",(()=>{o.classList.remove("is-opened"),n.classList.remove("overlay")}));
+//# sourceMappingURL=index.33afb539.js.map
