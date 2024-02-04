@@ -1,0 +1,28 @@
+@use '../init' as *;
+
+.footer {  
+  height: rem(64px);
+  border-top: 1px solid var(--gray_divider);
+
+  &_container {
+    @include flex(space-between, center);
+    height: 100%;
+  }
+
+  &_text {
+    @include font-size(14px, 18px);
+
+    &--gray {
+      color: var(--gray_text);
+    }
+  }
+
+  &_link {
+    color: var(--black);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

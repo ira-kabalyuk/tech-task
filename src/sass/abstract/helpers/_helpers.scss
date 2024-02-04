@@ -47,9 +47,6 @@
   height: 0;
 }
 
-@mixin accent-gradient {
-  background: linear-gradient(90deg, #920300 0%, #920300 20.14%, #ff3100 99.73%);
-}
 
 @mixin ellipsis {
   overflow: hidden;

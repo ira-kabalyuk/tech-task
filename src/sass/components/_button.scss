@@ -1,0 +1,18 @@
+@use '../init' as *;
+
+.button {
+  @include reset-button;
+  @include font-size(16px, 20px);
+  @include flex(center, center);
+  @include make-spacer(py, 1);
+  @include transition(background-color);
+
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: rem(8px);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary_hover);
+  }
+}

@@ -1,0 +1,30 @@
+@use '../init' as *;
+
+.tooltip {
+  @include make-spacer(p, 2);
+  @include font-size(14px, 18px);
+  @include flex(center, center);
+  @include transition(opacity);
+
+  position: absolute;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: rem(16px);
+  top: 32px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+
+  &::before {
+    @include size(0);
+
+      content: '';
+      border-style: solid;
+      border-width: 0 9px 14px 9px;
+      border-color: transparent transparent var(--primary) transparent;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-9px);
+      top: -13px;
+  }
+}

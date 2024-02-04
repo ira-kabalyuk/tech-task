@@ -1,36 +1,75 @@
 @use './init.scss' as *;
 
-.example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #2f2f37;
-  max-width: 960px;
-  padding: 16px;
+@forward './components/header';
+@forward './components/footer';
+@forward './components/navigation';
+@forward './components/form';
+@forward './components/button';
+@forward './components/card';
+@forward './components/badge';
+@forward './components/tooltip';
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;  
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 16px;  
+  min-width: 320px;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.example code {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #ff6b0a;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 2px;
+.layout {
+  @include flex(space-between, $direction: column);
+
+  overflow: hidden;
+  min-height: 100vh;  
+
+  &.overlay {
+    position: relative;
+
+    &::after {
+
+      @include size(100%);
+      
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        z-index: 1;
+        content: '';
+    }
+  }
 }
 
-.example .background {
-  height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
-  background-size: cover;
-  background-position: center;
+.container {
+  @include make-spacer(mx, auto);
+  @include make-spacer(px, 2);
+  @include make-spacer(px, 0, md);
+
+  width: 100%;
+  max-width: var(--container-width);
 }
 
-.link {
-  display: inline-block;
+.main {
+  @include make-spacer(my, 4);
+  
+  flex: 1 1;
 }
+
+.content {
+  @include make-spacer(mt, 4);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: rem(24px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: rem(16px);
+  }
+}
+
+
 
 

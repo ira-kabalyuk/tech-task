@@ -1,0 +1,21 @@
+@use '../init' as *;
+
+.header {
+  @include flex(space-between, center);
+
+  height: var(--header-height);
+  border-bottom: 1px solid var(--gray_divider);
+}
+
+.logo {
+  @include size(rem(108px), rem(32px));
+
+  display: block;
+}
+
+.header {
+
+  &_container {
+    @include flex(space-between, $align-items: center);
+  }
+}

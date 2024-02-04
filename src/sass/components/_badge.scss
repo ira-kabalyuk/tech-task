@@ -1,0 +1,20 @@
+@use '../init' as *;
+
+.badge {
+  @include make-spacer(py, 1);
+  @include make-spacer(px, 2);
+  @include font-size(14px, 16px);
+  @include flex(center, center);
+
+  font-weight: 500;
+  background-color: var(--black);
+  border-radius: rem(99px);
+  position: absolute;
+  bottom: rem(16px);
+  left: rem(16px);
+  color: var(--white);
+
+  &_icon {
+    @include make-spacer(mr, half);
+  }
+}

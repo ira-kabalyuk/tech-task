@@ -1,0 +1,32 @@
+@use '../init' as *;
+
+.form {
+  display: grid;
+  grid-gap: rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr rem(140px);
+  }
+
+  &_input {
+    @include font-size(16px, 20px);
+    @include make-spacer(py, 1);
+    @include make-spacer(pl, 5);
+    @include make-spacer(pr, 2);
+
+    border-radius: rem(8px);
+    color: var(--gray_text);
+    width: 100%;
+  }
+
+  &_wrapper {
+    position: relative;
+  }
+
+  &_search {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,91 @@
+
+@use '../init' as *;
+
+.navigation {
+  @include make-spacer(p, 2);
+  @include make-spacer(p, 0, md);
+  @include flex(space-between, flex-end, $direction: column);
+  @include transition(transform);
+
+  width: rem(264px);
+  min-height: 100vh;  
+  position: fixed;
+  transform: translateX(100%);
+  top: 0;
+  right: 0;  
+  background: var(--white);
+  z-index: 2;
+
+  @include media-breakpoint-up(md) {
+    transform: none;
+    align-items: center;
+    flex-direction: row;
+    position: static;
+    width: 100%;    
+    min-height: auto;
+  }
+  
+  &_menu {
+    @include make-spacer(ml, 6, md);
+    @include make-spacer(mt, 6);
+    @include make-spacer(mt, 0, md);
+
+    display: grid;
+    grid-gap: rem(48px);
+    justify-content: end;
+  
+    @include media-breakpoint-up(md) {
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: start;
+    }
+  }
+
+    &_link {
+      @include font-size(16px, 20px);
+  
+      color: var(--black);
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+  
+      &.active {
+        font-weight: 700;
+  
+        &:hover {
+          text-decoration: none;
+          cursor: default;
+        }
+      }
+    }
+
+  &_button {
+    @include reset-button;
+    @include font-size(16px, 20px);
+    @include make-spacer(py, half);
+
+    cursor: pointer;
+  }
+
+  &_closeButton {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &_openButton {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &.is-opened {
+    transform: translateX(0);   
+  }   
+}

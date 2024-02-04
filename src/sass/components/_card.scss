@@ -1,0 +1,55 @@
+@use '../init' as *;
+
+.card {
+  overflow: hidden;
+
+  &_link {
+    display: block;
+    text-decoration: none;
+  }
+
+  &_info {
+    position: relative;
+    z-index: 1;    
+
+    &:hover {
+
+      .tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &_title {
+    @include font-size(20px, 24px);
+    @include make-spacer(my, 0);
+
+    font-weight: 700;
+    color: var(--black);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &_desctiption {
+    @include font-size(14px, 18px);
+
+    color: var(--gray_text);
+  }
+
+  &_wrapper {
+    @include make-spacer(mt, 1);
+
+    position: relative;
+    border-radius: rem(16px);
+    overflow: hidden;
+  }
+
+  &_image {
+    @include size(100%);
+
+    display: block;
+    object-fit: cover;
+  }
+}

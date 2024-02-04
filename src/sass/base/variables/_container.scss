@@ -8,10 +8,6 @@
   --container-width: 100%;
 
   @include h.media-breakpoint-up(md) {
-    --container-width: #{h.rem(960px)};
-  }
-
-  @include h.media-breakpoint-up(lg) {
-    --container-width: #{h.rem(1200px)};
+    --container-width: #{h.rem(940px)};
   }
 }
